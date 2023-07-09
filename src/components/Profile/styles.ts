@@ -42,6 +42,7 @@ export const ProfileContainer = styled.div`
 
                 display: flex;
                 gap: 0.25rem;
+                border-bottom: 1px ${props => props.theme['blue']};
             }
         }
 
