@@ -41,7 +41,7 @@ export const ProfileContainer = styled.div`
                 font-size: 0.75rem;
 
                 display: flex;
-                gap: 0.5rem;
+                gap: 0.25rem;
             }
         }
 
@@ -54,6 +54,15 @@ export const ProfileContainer = styled.div`
             align-items: center;
             gap: 1.5rem;
             margin-top: auto;
+
+            span {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                color: ${props => props.theme['base-label']};
+            }
+
+
         }
 
 
