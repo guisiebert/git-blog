@@ -2,6 +2,7 @@ import { PostListContainer } from "./styles";
 import { PostCard } from "../PostCard";
 import { useEffect, useState } from "react";
 import { api } from "../../../../libs/axios";
+import { Link } from "react-router-dom";
 
 interface Post {
     id: number;
@@ -25,6 +26,8 @@ export function PostList() {
         
         const data = await api.get(`/search/issues?q=${query}%20repo:guisiebert/git-blog`)
         .then(res => res.data)
+
+        console.log(data)
 
         let postList = data.items.map( (post : Post) => { return (
             {
@@ -51,11 +54,14 @@ export function PostList() {
     return (
         <PostListContainer>
             {posts.map( item => {return (
-                <PostCard 
-                    key={item.id}
-                    title={item.title}
-                    body={item.body}
-                />
+                <Link to={`/post/${item.id}`}>
+                    <PostCard 
+                        key={item.id}
+                        title={item.title}
+                        body={item.body}
+                        id={item.id}
+                    />
+                </Link>
             )})}
        </PostListContainer>
     )
