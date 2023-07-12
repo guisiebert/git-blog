@@ -17,17 +17,8 @@ export function PostList() {
 
     async function fetchPosts(query: string) {
         
-        // 
-        // const data = await api.get('/search/issues', {
-        //     params: {
-        //         q: "Boas%20práticas%20repo:rocketseat-education/reactjs-github-blog-challenge",
-        //     }
-        // })
-        
         const data = await api.get(`/search/issues?q=${query}%20repo:guisiebert/git-blog`)
         .then(res => res.data)
-
-        console.log(data)
 
         let postList = data.items.map( (post : Post) => { return (
             {
@@ -37,8 +28,6 @@ export function PostList() {
                 body: post.body
             }
         )})
-
-        console.log(postList)
 
         setPosts(postList)
     }
@@ -54,9 +43,9 @@ export function PostList() {
     return (
         <PostListContainer>
             {posts.map( item => {return (
-                <Link to={`/post/${item.id}`}>
+                <Link to={`/post/${item.id}`} key={item.id} >
                     <PostCard 
-                        key={item.id}
+                        
                         title={item.title}
                         body={item.body}
                         id={item.id}

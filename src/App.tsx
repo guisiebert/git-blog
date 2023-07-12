@@ -16,17 +16,3 @@ function App() {
 }
 
 export default App
-
-
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faEnvelope, faUserGroup, faBuilding, faCalendarDay, faChevronLeft, faComment, faArrowUpRightFromSquare, } from '@fortawesome/free-solid-svg-icons'
-// import { faGithub } from '@fortawesome/free-brands-svg-icons'
-
-// <FontAwesomeIcon icon={faEnvelope} />
-// <FontAwesomeIcon icon={faGithub} />
-// <FontAwesomeIcon icon={faBuilding} />
-// <FontAwesomeIcon icon={faUserGroup} />
-// <FontAwesomeIcon icon={faCalendarDay} />
-// <FontAwesomeIcon icon={faChevronLeft} />
-// <FontAwesomeIcon icon={faComment} />
-// <FontAwesomeIcon icon={faArrowUpRightFromSquare} />

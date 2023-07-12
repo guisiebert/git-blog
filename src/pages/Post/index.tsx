@@ -12,8 +12,6 @@ export function Post() {
     const [currentPost, setCurrentPost] = useState({
     })
 
-    console.log(currentPost)
-
     async function getPost() {
         
         const data = await api.get(`/search/issues?q=%20repo:guisiebert/git-blog`)
@@ -29,12 +27,8 @@ export function Post() {
     return (
         <>
             <Header/>
-            {/* <PostInfo
-                post={post}
-            /> */}
-            {/* <PostContent /> */}
-            <p>"Oi gente"</p>
-            <p>{currentPost.body}</p>
+            <PostInfo post={currentPost} />
+            <PostContent content={currentPost.body}/>
         </>
     )
 }
