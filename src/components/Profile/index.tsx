@@ -14,7 +14,6 @@ const avatarImg = "https://avatars.githubusercontent.com/u/114298014?v=4"
 export function Profile() {
 
     const author = useContext(AuthorContext)
-    console.log(author.bio)
 
     return (
         <ProfileContainer>

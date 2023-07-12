@@ -1,12 +1,20 @@
 import { styled } from "styled-components";
 
 export const PostInfoContainer = styled.div`
+    padding: 2rem 2.5rem;
+
+
+`
+
+export const PostInfoContent = styled.div`
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
 
     margin: -7rem auto 0;
     width: 100%;
-    max-width: 864px;
+    max-width: 54rem;
     padding: 2rem 2.5rem;
 
     background-color: ${props => props.theme['base-profile']};

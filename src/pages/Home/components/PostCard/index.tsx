@@ -14,7 +14,6 @@ export function PostCard({title, body, id}) {
                 <span>Há 1 dia</span>
             </header>
             <p className="excerpt">{excerpt}...</p>
-            <p>{id}</p>
         </PostCardContainer>
     )
 }

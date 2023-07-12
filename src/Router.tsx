@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Post } from "./pages/Post";
 import { AuthorProvider } from "./contexts/AuthorContext";
+import { PostContextProvider } from "./contexts/PostsContext";
 
 export interface Post {
     title: string
@@ -23,10 +24,12 @@ const testPost: Post = {
 export function Router() {
     return (
         <AuthorProvider>
-            <Routes>
-                <Route path="/" element={<Home/>} />
-                <Route path="/post/:id" element={<Post post={testPost}/>} />
-            </Routes>
+            <PostContextProvider>
+                <Routes>
+                    <Route path="/" element={<Home/>} />
+                    <Route path="/post/:id" element={<Post post={testPost}/>} />
+                </Routes>
+            </PostContextProvider>
         </AuthorProvider>
     )
 }

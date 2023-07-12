@@ -1,3 +1,4 @@
+import { ReactMarkdown } from "react-markdown/lib/react-markdown"
 import { BlogPostContainer, BlogPostText } from "./styles"
 
 export function PostContent(props) {
@@ -7,7 +8,9 @@ export function PostContent(props) {
     return (
         <BlogPostContainer>
             <BlogPostText>
-                {content}
+                <ReactMarkdown>
+                    {content}
+                </ReactMarkdown>
             </BlogPostText>
         </BlogPostContainer>
     )
