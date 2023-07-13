@@ -34,6 +34,12 @@ export const PostInfoContent = styled.div`
             color: ${props => props.theme['blue']};
 
             text-decoration: none;
+            border-bottom: 2px solid transparent;
+
+            &:hover {
+                border-bottom: 2px solid ${props => props.theme['blue']};
+                transition: 0.2s;
+            }
         }
     }
 

@@ -3,6 +3,8 @@ import { styled } from "styled-components";
 export const ProfileContainer = styled.div`
     display: flex;
     gap: 2rem;
+    position: relative;
+    z-index: 1;
 
     margin: -7rem auto 0;
     width: 100%;
@@ -42,7 +44,12 @@ export const ProfileContainer = styled.div`
 
                 display: flex;
                 gap: 0.25rem;
-                border-bottom: 1px ${props => props.theme['blue']};
+                border-bottom: 2px solid transparent;
+
+                &:hover {
+                    border-bottom: 2px solid ${props => props.theme['blue']};
+                    transition: 0.2s;
+                }
             }
         }
 

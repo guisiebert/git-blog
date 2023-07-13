@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { PostInfoContainer, PostInfoContent } from "./styles";
+import { DateFormatter } from "../../../../utils/formatter.ts";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarDay, faChevronLeft, faComment, faArrowUpRightFromSquare, } from '@fortawesome/free-solid-svg-icons'

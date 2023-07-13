@@ -24,10 +24,9 @@ export const PostContext = createContext([])
 
 export function PostContextProvider({ children }) {
     const [posts, setPosts] = useState([])
-    console.log(posts)
 
-    async function getAllPosts(query: string) {
-        const data = await api.get(`/search/issues?q=${query}%20repo:guisiebert/git-blog`)
+    async function getAllPosts() {
+        const data = await api.get(`/search/issues?q=%20repo:guisiebert/git-blog`)
         .then(res => res.data.items)
 
         setPosts(data)
@@ -35,6 +34,7 @@ export function PostContextProvider({ children }) {
 
     useEffect( () => {
         getAllPosts("")
+        console.log("useEffect was triggered")
     }, [])
     
     return (

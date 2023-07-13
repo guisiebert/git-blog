@@ -5,7 +5,7 @@ import { PostCardContainer } from "./styles"
 
 export function PostCard({title, body, id}) {
 
-    const excerpt = body.slice(0,170)
+    const excerpt = body.slice(0,160)
 
     return (
         <PostCardContainer>

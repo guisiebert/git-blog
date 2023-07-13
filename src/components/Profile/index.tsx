@@ -4,6 +4,7 @@ import { AuthorContext } from "../../contexts/AuthorContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faArrowUpRightFromSquare, faBuilding, faUserGroup } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 
 const avatarImg = "https://avatars.githubusercontent.com/u/114298014?v=4"
@@ -17,14 +18,14 @@ export function Profile() {
 
     return (
         <ProfileContainer>
-            <img className="avatar" src={avatarImg} alt="" />
+            <img className="avatar" src={author.avatar_url} alt="" />
             <div className="profile-content">
                 <div className="name-display">
                     <h2>{author.name}</h2>
-                    <a href={author.html_url}>
+                    <Link to={author.html_url} className="git">
                         GITHUB
                         <FontAwesomeIcon icon={faArrowUpRightFromSquare} /> 
-                    </a>
+                    </Link>
                 </div>
                 <p>{author.bio}</p>
                 <div className="stats">

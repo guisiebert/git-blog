@@ -19,8 +19,8 @@ export function Post() {
     async function getPost() {
         const data = await api.get(`/search/issues?q=%20repo:guisiebert/git-blog`)
         .then(res => res.data.items)        
-        const post = await data.filter(post => post.id == id)
-        setCurrentPost(post[0])
+        const post = await data.find(post => post.id == id)
+        setCurrentPost(post)
     }
 
     useEffect( () => {
