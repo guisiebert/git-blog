@@ -1,6 +1,6 @@
 import { MainContainer, PostListContainer, SearchBar } from "./styles";
 import { PostCard } from "../PostCard";
-import { HtmlHTMLAttributes, useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { PostContext } from "../../../../contexts/PostsContext";
 
@@ -8,16 +8,14 @@ import { PostContext } from "../../../../contexts/PostsContext";
 
 export function PostList() {
 
-    const postList = useContext(PostContext)
+    const {postlist, getPosts} = useContext(PostContext)
     const [query, setQuery] = useState("")
-    // const [filteredList, setFilteredList] = useState([])
-
-    const filteredList = postList.filter(post => post.body)
-    console.log(query)
 
 
-    function handleChange(e: any) {
-        setQuery(e.target.value)
+    function handleSubmit(e: any) {
+        e.preventDefault()
+        console.log('form submitted')
+        getPosts(e.target[0].value)
     }
 
 
@@ -28,16 +26,20 @@ export function PostList() {
             <SearchBar>
                 <div className="summary">
                     <strong>My Posts</strong>
-                    <p>{postList.length} posts</p>
+                    <p>{postlist.length} posts</p>
                 </div>
 
-                <form>
-                    <input type="text" placeholder="Search content" onChange={handleChange}/>
+                <form onSubmit={handleSubmit}>
+                    <input type="text" placeholder="Search content">
+                    </input>
+                    <button>
+                        Search
+                    </button>
                 </form>
             </SearchBar>
 
             <PostListContainer>
-                {postList.map( item => {return (
+                {postlist.map( item => {return (
                     <Link to={`/post/${item.id}`} key={item.id} >
                         <PostCard 
                             

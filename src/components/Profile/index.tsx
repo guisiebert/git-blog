@@ -7,11 +7,6 @@ import { faArrowUpRightFromSquare, faBuilding, faUserGroup } from "@fortawesome/
 import { Link } from "react-router-dom";
 
 
-const avatarImg = "https://avatars.githubusercontent.com/u/114298014?v=4"
-
-
-
-
 export function Profile() {
 
     const author = useContext(AuthorContext)

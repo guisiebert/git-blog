@@ -40,6 +40,11 @@ export const SearchBar = styled.div`
 
     }
 
+    form {
+        display: flex;
+        gap: 1rem;
+    }
+
     input {
         width: 100%;
         padding: 0.75rem 1rem;
@@ -55,6 +60,21 @@ export const SearchBar = styled.div`
         &::placeholder {
             color: ${props => props.theme['base-label']};
         }
+    }
+
+    button {
+        width: 6rem;
+
+        padding: 0.75rem 1rem;
+
+        border-radius: 0.375rem;
+        border: 1px solid ${props => props.theme['base-border']};
+        background: ${props => props.theme['base-input']};
+
+        line-height: 160%;
+        font-weight: 400;
+        color: ${props => props.theme['base-text']};
+
     }
 `
 
